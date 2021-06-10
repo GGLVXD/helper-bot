@@ -1,0 +1,16 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "A template Discord bot :)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "installall": "npm install build-essentials && npm install discord.js && npm install opusscript && npm install ms"
+  },
+  "author": "sysollie",
+  "license": "The Unlicense",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "ms": "^2.1.2"
+  }
+}
