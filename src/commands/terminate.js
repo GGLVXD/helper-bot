@@ -62,7 +62,7 @@ async function bulkDelete(targetId, interaction){
     for(const channel of allChannels.values()){
         const messages = await channel.messages.fetch({ limit: 100 });
         const cutoff = Date.now() - 14 * 24 * 60 * 60 * 1000;
-        const recentMessages = messages.filter(message => message.createdTimestamp > cutoff);
+        const recentMessages = messages.filter(message => message.createdTimestamp > cutoff && message.author.id == targetId);
 
         const deletedMessages = await channel.bulkDelete(recentMessages).catch(console.error);
         if (deletedMessages) {
