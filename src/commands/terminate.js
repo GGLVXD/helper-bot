@@ -28,7 +28,7 @@ module.exports = {
             return false;
         }
 
-        await interaction.deferReply({ ephemeral: true });
+        await interaction.reply({ content: 'working on it...' });
 
         if(targetUser.id == AuthorID){
             targetUser.roles.add(QURANTINE_ROLE_ID);
