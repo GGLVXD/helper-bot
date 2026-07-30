@@ -23,12 +23,18 @@ module.exports = {
             return false;
         }
 
+        if(targetUser.id == process.env.DISCORD_ID){
+            await interaction.reply({content: `nope`, ephemeral: true,});
+            return false;
+        }
+
+
         if (targetUser.roles.cache.has(QURANTINE_ROLE_ID)) {
             await interaction.reply({content: `user ${targetUser.user.username} is already quarantined`, ephemeral: true,});
             return false;
         }
 
-        await interaction.reply({ content: 'working on it...' });
+        await interaction.deferReply({ ephemeral: true });
 
         if(targetUser.id == AuthorID){
             targetUser.roles.add(QURANTINE_ROLE_ID);
